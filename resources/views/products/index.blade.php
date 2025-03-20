@@ -112,44 +112,11 @@
       background: #fff;
     }
 
-    .category {
-      flex: 1 1 250px;
-      min-width: 250px;
-      max-width: 300px;
-      background: #ffecb3;
-      border: 1px solid #e0a800;
-      border-radius: 8px;
-      text-align: center;
-      padding: 20px;
-      transition: box-shadow 0.3s;
-    }
-
-    .category:hover {
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
     footer {
       background: #6d4c41;
       color: #fff;
       padding: 50px 30px;
       text-align: center;
-    }
-
-    .footer-links a {
-      color: #ffcc80;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: #ffab40;
-    }
-
-    .footer-copy {
-      font-size: 0.9rem;
-      color: #d7ccc8;
-      margin-top: 10px;
     }
   </style>
 </head>
@@ -158,9 +125,10 @@
     <div class="logo">Mi E-commerce</div>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Ofertas</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/products">Productos</a></li>
+        <li><a href="/products/create">Crear Producto</a></li>
+        <li><a href="/products/sample-product">Ver Producto</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
@@ -172,7 +140,7 @@
       <p>
         Explora nuestro catálogo exclusivo y disfruta de una experiencia de compra sin igual. Calidad, precio y variedad en un solo lugar.
       </p>
-      <a href="#">¡Compra ahora!</a>
+      <a href="/products">¡Explorar Productos!</a>
     </div>
   </section>
 

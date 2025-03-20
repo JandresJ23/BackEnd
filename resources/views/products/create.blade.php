@@ -97,6 +97,26 @@
       background: #a0522d;
     }
 
+    .nav-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      background: #8b4513;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #5a3e1b;
+    }
+
     footer {
       background: #8b4513;
       color: #fff;
@@ -112,10 +132,9 @@
     <div class="logo">Mi E-commerce</div>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/products">Productos</a></li>
+        <li><a href="/products/create">Crear Producto</a></li>
       </ul>
     </nav>
   </header>
@@ -159,6 +178,11 @@
 
       <button type="submit" class="submit-btn">Crear Producto</button>
     </form>
+
+    <div class="nav-links">
+      <a href="/">Volver al Inicio</a>
+      <a href="/products">Ver Productos</a>
+    </div>
   </div>
 
   <footer>
