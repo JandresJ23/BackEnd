@@ -1,193 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Crear Producto - Mi E-commerce</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Arial", sans-serif;
-    }
-
-    body {
-      background: #ffefd5;
-      color: #5a3e1b;
-    }
-
-    header {
-      background: #d2691e;
-      padding: 20px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    header .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    header nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    header nav ul li a:hover {
-      color: #ffcc00;
-    }
-
-    .form-container {
-      max-width: 800px;
-      margin: 50px auto;
-      background: #fff8dc;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .form-title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .form-title h1 {
-      font-size: 2rem;
-      color: #a0522d;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #d2691e;
-      border-radius: 5px;
-    }
-
-    .submit-btn {
-      background: #d2691e;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .submit-btn:hover {
-      background: #a0522d;
-    }
-
-    .nav-links {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .nav-links a {
-      display: inline-block;
-      background: #8b4513;
-      color: #fff;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: #5a3e1b;
-    }
-
-    footer {
-      background: #8b4513;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #FFFAF0;
+          border: 10px solid #FF8C00;
+          box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+          padding: 20px;
+      }
+      .bg-promo {
+          background-image: url('/images/promo-bg.jpg');
+          background-size: cover;
+          background-position: center;
+          border-radius: 15px;
+          border: 5px solid #FF8C00;
+      }
+      .category-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px rgba(255, 140, 0, 0.6);
+      }
+      .btn-glow:hover {
+          box-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
+      }
+  </style> 
 </head>
-<body>
-
-  <header>
-    <div class="logo">Mi E-commerce</div>
-    <nav>
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/products">Productos</a></li>
-        <li><a href="/products/create">Crear Producto</a></li>
-      </ul>
+<body class="bg-gray-100">
+    
+    <nav class="bg-orange-600 p-4 text-black flex justify-between">
+        <a href="/" class="font-bold text-lg">Mi E-commerce</a>
+        <div>
+            <a href="/products" class="mx-2">Productos</a>
+            <a href="/products/create" class="mx-2">Crear Producto</a>
+            <a href="/contact" class="mx-2">Contacto</a>
+        </div>
     </nav>
-  </header>
 
-  <div class="form-container">
-    <div class="form-title">
-      <h1>Agregar un Nuevo Producto</h1>
-      <p>Completa los detalles para registrar un nuevo producto en nuestro catálogo.</p>
+    <div class="container mx-auto mt-10 bg-white p-6 shadow-md rounded-lg">
+        <h1 class="text-2xl font-bold mb-4">Crear Producto</h1>
+        <form action="/products" method="POST" class="space-y-4">
+            @csrf
+            <div>
+                <label class="block font-semibold">Nombre del Producto</label>
+                <input type="text" name="name" class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block font-semibold">Descripción</label>
+                <textarea name="description" class="w-full p-2 border rounded"></textarea>
+            </div>
+            <div>
+                <label class="block font-semibold">Precio</label>
+                <input type="number" name="price" class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="bg-orange-600 text-white px-4 py-2 rounded">Guardar</button>
+        </form>
     </div>
-
-    <form id="productForm">
-      <div class="form-group">
-        <label for="productName">Nombre del Producto:</label>
-        <input type="text" id="productName" name="productName" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="productDescription">Descripción:</label>
-        <textarea id="productDescription" name="productDescription" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="price">Precio (USD):</label>
-        <input type="number" id="price" name="price" step="0.01" required>
-      </div>
-
-      <div class="form-group">
-        <label for="stock">Stock Disponible:</label>
-        <input type="number" id="stock" name="stock" required>
-      </div>
-
-      <div class="form-group">
-        <label for="category">Categoría:</label>
-        <select id="category" name="category" required>
-          <option value="">--Selecciona una categoría--</option>
-          <option value="ropa">Ropa</option>
-          <option value="accesorios">Accesorios</option>
-          <option value="tecnologia">Tecnología</option>
-        </select>
-      </div>
-
-      <button type="submit" class="submit-btn">Crear Producto</button>
-    </form>
-
-    <div class="nav-links">
-      <a href="/">Volver al Inicio</a>
-      <a href="/products">Ver Productos</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>Creado por <strong>Andres Felipe Joya Buitrago</strong>. Todos los derechos reservados &copy; 2025.</p>
-  </footer>
-
+    
+    <footer class="bg-orange-900 text-white py-4 text-center mt-10">
+        <p>&copy; 2025 Andres Felipe Joya Buitrago. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
