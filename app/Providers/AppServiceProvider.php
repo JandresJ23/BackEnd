@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use SebastianBergmann\Type\VoidType;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,8 +19,11 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
+
+       
+
     public function boot(): void
     {
-        //
+        Paginator::useBootstrapFive();
     }
 }
