@@ -136,6 +136,15 @@
 
   <section class="hero">
     <div class="hero-content">
+      @foreach (%listProducts as $product)
+      <div class="col-md-4">
+        <div class = "product-card">
+          <img src= "{{product->url_image}}}" class="img-fluid" alt="producto 1">
+          <h3>{{ $product -> name}} </h3>
+          <p class ="text-muted"> Categoría: {{$product->category_id}}</p>
+          <div class="producto-price">$ {{$product-price}}</div>
+          <button class="btn btn-primary">Agregar al carrito</button>   
+        </div>
       <h1>Bienvenido a la mejor tienda</h1>
       <p>
         Explora nuestro catálogo exclusivo y disfruta de una experiencia de compra sin igual. Calidad, precio y variedad en un solo lugar.
